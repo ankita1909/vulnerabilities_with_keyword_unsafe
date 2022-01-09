@@ -1,0 +1,47 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch PSoC6 CM4 (OpenOCD)",
+            "type": "cortex-debug",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "executable": "target/thumbv7em-none-eabi/debug/psoc6_helloworld",
+            "servertype": "openocd",
+            "searchDir": [
+                "${workspaceRoot}",
+                "${workspaceRoot}/arm-none-eabi-files",
+                "${workspaceRoot}/openocd/scripts/"
+            ],
+            "configFiles": [
+                "openocd.tcl"
+            ],
+            "overrideLaunchCommands": [
+                "set mem inaccessible-by-default off",
+                "-enable-pretty-printing",
+                "monitor arm semihosting enable",
+                "monitor reset init",
+                "-target-download",             // Comment this out if you don't want to reload program
+                "monitor reset run",
+                "monitor sleep 200",
+                "monitor psoc6 reset_halt sysresetreq"
+            ],
+
+            "overrideRestartCommands": [
+
+            ],
+            "postRestartSessionCommands": [
+           
+            ],
+            "preLaunchCommands": [
+                
+            ],
+            "svdFile": "psoc6_02.svd",
+            "runToMain": true,         
+            "showDevDebugOutput": false
+        }
+       
+        
+    ]
+}
+
