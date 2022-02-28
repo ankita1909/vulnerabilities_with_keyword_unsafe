@@ -38,7 +38,7 @@ fn fib(n: u32) -> u32 {
 #[entry]
 fn main() -> ! {
 
-    hprintln!("Hello, world!").unwrap();
+    hprintln!("Hello,world!").unwrap();
 
     //let mut t = 0;
     //let mut incoming_data:[u8;70] = [0;70];
