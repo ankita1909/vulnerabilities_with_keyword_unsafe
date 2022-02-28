@@ -6,3 +6,5 @@ This project contains the use of `unsafe` keyword to exploit various safety feat
 - Null Pointer dereferencing
 - Buffer Overread
 - Defied Immutability: variable a is declared immutable, still the value is updated using the pointer reference to a in an `unsafe` block.
+
+The project can be run on `Cypress PSOC6 062 WIFI BT` board using Visual Studio Code. The `launch.json` contains the required setting for debugging the code.
